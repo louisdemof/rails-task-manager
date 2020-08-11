@@ -5,14 +5,14 @@ Rails.application.routes.draw do
   # verb 'path', to:'controller#action'
   # Read all the tasks
   get '/tasks', to: 'tasks#index'
-  # Read  one task
-  get '/tasks/:id', to: 'tasks#show'
   # Create a task
   get '/tasks/new', to: 'tasks#new'
+  # Read  one task
+  get '/tasks/:id', to: 'tasks#show'
   post '/tasks/', to: 'tasks#create'
   # Update a task
   get '/tasks/:id/edit', to: 'tasks#edit'
-  patch '/tasks/:id', to: 'tasks#update'
+  patch '/tasks/:id', to: 'tasks#update', as: :task
   # Delete a task
   delete '/tasks/:id', to: 'tasks#destroy'
 end
